@@ -16,7 +16,7 @@ export default function Example() {
 
   return (
     <div className="bg-white">
-      <header className="fixed inset-x-0 top-0 z-50">
+      <header className="fixed inset-x-0 top-10 z-50">
         <nav
           aria-label="Global"
           className="flex items-center justify-between p-6 lg:px-8"
@@ -41,7 +41,7 @@ export default function Example() {
               <Bars3Icon aria-hidden="true" className="size-6" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12 bg-amber-900">
+          <div className="hidden lg:flex lg:gap-x-12 backdrop-blur-sm bg-white/10 py-2 px-4 rounded-3xl">
             {navigation.map((item) => (
               <a
                 key={item.name}
