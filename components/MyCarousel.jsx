@@ -51,7 +51,7 @@ export function MyCarousel() {
       opts={{
         align: "start",
       }}
-      className="w-full max-w-4xl bg-amber-300"
+      className="w-full max-w-4xl bg-amber-300 p-4 rounded-4xl"
     >
       <CarouselContent>
         {steps.map((step) => (
