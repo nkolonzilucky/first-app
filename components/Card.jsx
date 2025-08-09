@@ -1,38 +1,46 @@
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import Image from "next/image";
+import React from "react";
 
-import React from 'react'
-
-export default function MyCard({step, sub_title, instruction, image}) {
+export default function Card({
+  src = "https://dummyjson.com/image/150",
+  alt = "default",
+  number = 0,
+  title = "Default",
+  description = "default",
+}) {
   return (
-    <Card className={" max-w-sm"}>
-      <CardHeader>
-        <div className="text-center">
-          <CardTitle>Step {step}</CardTitle>
-          <CardDescription className={"max-h-6"}>{sub_title}</CardDescription>
+    <div className="bg-linear-to-tr from-indigo-300 via-indigo-200 to-indigo-100 rounded-xl flex flex-col shadow-lg items-center scale-95 h-40 min-h-fit sm:h-auto">
+      {/* <Image
+        width={150}
+        height={150}
+        className="mt-6 ring-8 ring-indigo-800 rounded-xl object-contain"
+        src={src}
+        alt={alt}
+      /> */}
+
+      <div className="px-6 py-4 sm:w-52 text-center">
+        <div className="font-bold text-xl mb-2">
+          <span className="text-indigo-800 block font-light mr-0.5 text-2xl">
+            {number}.
+          </span>
+          <span className="text-indigo-900 font-light text-2xl sm:text-2xl">
+            {title}
+          </span>
         </div>
-      </CardHeader>
-      <CardContent className={"flex flex-col items-center min-w-full"}>
-        <Image
-          src={image}
-          width={200}
-          height={300}
-          alt="Steps"
-          className="max-w-fit max-h-fit"
-        />
-        <p className="min-w-sm">{instruction}</p>
-      </CardContent>
-      {/* <CardFooter>
-        <p>Card Footer</p>
-      </CardFooter> */}
-    </Card>
+        <p className="text-gray-900 text-xl sm:text-sm">{description}</p>
+      </div>
+    </div>
   );
 }
+
+// <div class="px-6 pt-4 pb-2">
+//   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+//     #photography
+//   </span>
+//   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+//     #travel
+//   </span>
+//   <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+//     #winter
+//   </span>
+// </div>
