@@ -10,7 +10,7 @@ export default function ChefCard({
   shopName,
 }) {
   return (
-    <div className="bg-linear-to-tr from-indigo-300 via-indigo-200 to-indigo-100 rounded-xl flex flex-col shadow-lg shadow-indigo-500 items-center h-64 min-h-fit sm:h-64 w-96 p-6">
+    <div className="bg-linear-to-tr from-indigo-300 via-indigo-200 to-indigo-100 rounded-xl flex flex-col shadow-lg shadow-indigo-500 items-center h-64 min-h-fit sm:h-64 w-fit p-6 m-2">
       <Image
         width={150}
         height={150}

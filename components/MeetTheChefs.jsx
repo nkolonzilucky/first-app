@@ -28,20 +28,26 @@ const chefs = [
 
 export default function MeetTheChefs() {
   return (
-    <div>
-      <h1 className='text-center text-2xl font-light tracking-wide text-balance text-indigo-800 sm:text-4xl mt-9'>
+    <div className="w-full">
+      <h1 className="text-center text-2xl font-light tracking-wide text-balance text-indigo-800 sm:text-4xl mt-9">
         Meet the Chefs
-          </h1>
-          <section className='flex justify-center mt-10'>
-              <div className='grid grid-cols-3 gap-8'>
-                  {chefs.map((chef) => {
-                      return (
-                          <ChefCard key={chef.id} shopName={chef.shopName} alt={chef.alt} src={chef.image} number={chef.id} names={chef.names} />
-                      )
-                  })}
-              </div>
-              
-          </section>
+      </h1>
+      <section className="flex justify-center mt-10 w-full overflow-clip">
+        <div className="grid grid-cols-1 md:grid-cols-3 sm:gap-8 md:gap-16">
+          {chefs.map((chef) => {
+            return (
+              <ChefCard
+                key={chef.id}
+                shopName={chef.shopName}
+                alt={chef.alt}
+                src={chef.image}
+                number={chef.id}
+                names={chef.names}
+              />
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }
