@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import DishCard from "./DishCard";
+import Filter from "./Filter";
 
 export function MenuTabs() {
   return (
@@ -9,14 +10,14 @@ export function MenuTabs() {
           <TabsTrigger value="content_1">Content 1</TabsTrigger>
           <TabsTrigger value="content_2">Content 2</TabsTrigger>
         </TabsList>
-        <TabsContent value="content_1" className={"w-fit"}>
+        <TabsContent value="content_1" className={"w-fit flex gap-8"}>
           <div className="grid grid-cols-3 gap-6">
             <DishCard
               name={"Umbengo"}
               description={"Very nice braaied meat"}
               src={"/braaipic.jpeg"}
               price={"R150"}
-              buttonLabel={"Add to cart"}
+              buttonLabel={"+ Add to cart"}
               key={1}
             />
             <DishCard
@@ -24,7 +25,7 @@ export function MenuTabs() {
               description={"Very nice braaied meat"}
               src={"/braaipic.jpeg"}
               price={"R150"}
-              buttonLabel={"Add to cart"}
+              buttonLabel={"+ Add to cart"}
               key={2}
             />
             <DishCard
@@ -32,10 +33,11 @@ export function MenuTabs() {
               description={"Very nice braaied meat"}
               src={"/braaipic.jpeg"}
               price={"R150"}
-              buttonLabel={"Add to cart"}
+              buttonLabel={"+ Add to cart"}
               key={3}
             />
           </div>
+          <Filter />
         </TabsContent>
         <TabsContent value="content_2">
           <p className="flex justify-center">Tabs content 2</p>
