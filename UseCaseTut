@@ -1,0 +1,14 @@
+Use case.
+
+Data:
+
+type DishCardProps = {
+    name: string;
+    shortDescription: string;
+    price: string;
+    dishCartegory: string; //Starter, main, dessert, drink
+    dietaryCatergory: string; //vegan, gluten-free, halal
+    popularity: string; // High, Medium, Low
+    arrivalDate: Date;
+    rating: number; //1,2,3,4,5
+}

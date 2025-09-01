@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useState } from "react";
+
 
 const filterOptions = [
   {
@@ -18,13 +18,16 @@ const filterOptions = [
     name: "filter",
     value: "Halal",
   },
+  {
+    id: "halal2",
+    name: "filter",
+    value: "Halal2",
+  },
 ];
-export default function Filter() {
-  const [selected, setSelected] = useState("Hello");
-  console.log(selected);
+export default function Filter({ selectedFilters, setSelectedFilters }) {
   return (
     <form>
-      <h1 className="text-xl font-medium mb-4">Filter</h1>
+      <h1 className="text-xl font-medium">Filter</h1>
 
       {filterOptions.map((filterOption) => {
         return (
@@ -34,8 +37,14 @@ export default function Filter() {
               id={filterOption.id}
               value={filterOption.value}
               onChange={(e) => {
-                setSelected(e.target.value);
-                console.log(e.target.value);
+                if (e.target.checked) {
+                  setSelectedFilters([...selectedFilters, e.target.value]);
+                } else if (!e.target.checked) {
+                  const newFilterList = selectedFilters.filter(
+                    (f) => f !== e.target.value
+                  );
+                  setSelectedFilters(newFilterList);
+                }
               }}
               type="checkbox"
             />
